@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "django-install"
+dynamic = ["version"]
+description = "Automated Django package installation"
+readme = "README.md"
+requires-python = ">=3.9"
+license = "BSD-3-Clause"
+authors = [
+    { name = "Richard Terry", email = "code@radiac.net" },
+]
+classifiers = [
+    "Development Status :: 1 - Planning",
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://github.com/radiac/django-install"
+Documentation = "https://django-install.readthedocs.io/en/latest/"
+Repository = "https://github.com/radiac/django-install"
+Issues = "https://github.com/radiac/django-install/issues"
+
+[project.scripts]
+django-install = "django_install:main"
+
+[tool.setuptools.dynamic]
+version = { attr = "django_install.__version__" }
+
+[tool.setuptools.packages.find]
+include = ["django_install*"]
